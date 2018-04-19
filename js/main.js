@@ -17,6 +17,10 @@ let countProperties = function (obj) {
     return count;
 };
 
+let visibleItemsCount = function(menu) {
+    return menu.querySelectorAll('.menu-holder>ul>li:not(.hidden)').length;
+}
+
 let setListItemsVisibility = function (menu, target) {
     //here we get all nodes with "data-for"
     //searching nodes that requires some DOM element to be shown
@@ -24,12 +28,20 @@ let setListItemsVisibility = function (menu, target) {
 
     listItemsArray.forEach(function (element) {
         //reset visibility for possible previous iteration
-        element.style.display = 'block';
+        element.classList.remove('hidden')
 
         //setting visibility
         //is clicked node === requierd node (stornig required nodes in [data-for])
-        if (document.getElementById(element.dataset.for) !== target) { element.style.display = 'none' };
+        if (document.getElementById(element.dataset.for) !== target) { element.classList.add('hidden') };
+        
     });
+
+    //adjust up/down buttons visibility with new menu items count
+    if (visibleItemsCount(menu) > 8) {
+        menu.querySelector('.btn-down').style.display = 'block';
+    } else {
+        menu.querySelector('.btn-down').style.display = 'none'
+    }
 }
 
 let processData = function (rootElement, data) {

@@ -171,3 +171,7 @@ body {
 .text-red {
     color: red;
 }
+
+.hidden {
+    display: none;
+}
