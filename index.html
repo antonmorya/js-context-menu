@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Context Menu</title>
+    <link rel="stylesheet" href="styles/reboot.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body id="body">
+
+<h1 id="h1" class="text-red">RMB this header for full menu</h1>
+<h1>RMB enywhere for truncated menu</h1>
+
+<h5>Config:</h5>
+<p>
+ <b>'onlyfor'</b> - <b>id</b> of specific DOM element (if you want to show current menu element only on it)
+</p>
+
+<p>
+     <b>'text'</b> - menu element text (only required)
+</p>
+
+<p>
+     <b>'disabled'</b> - true/false or absent
+</p>
+
+<p>
+    <b>'handler'</b> - function or absent
+</p>
+
+
+<div id="context-menu" class="">
+    <button class="btn-up btn btn-block"><span class="caret up"></span></button>
+    <div class="menu-holder"></div>
+    <button class="btn-down btn btn-block"><span class="caret down"></span></button>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+    contextMenu(document.querySelector('#context-menu div'),
+        {
+            'item-1': {
+                onlyfor: 'h1',
+                text: 'item-1',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-2': {
+                text: 'item-2',
+                handler: null,
+                disabled: true,
+                onlyfor: null,
+                "subitem": {
+                    "sub-item-2-1": {
+                        text: 'item-4-1',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    },
+                    "sub-item-2-2": {
+                        text: 'item-4-2',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    }
+                }
+            },
+            'item-3': {
+                text: 'item-3',
+                handler: null,
+                disabled: false,
+                onlyfor: null,
+                "subitem": {
+                    "sub-item-3-1": {
+                        text: 'item-3-1',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    },
+                    "sub-item-3-2": {
+                        text: 'item-3-2',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    }
+                }
+            },
+            'item-4': {
+                text: 'item-4',
+                handler: function () {
+                    alert('item-4 clicked!')
+                },
+                disabled: false,
+                onlyfor: null,
+                "subitem": {
+                    "sub-item-4-1": {
+                        text: 'item-4-1',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    },
+                    "sub-item-4-2": {
+                        text: 'item-4-2',
+                        handler: null,
+                        disabled: false,
+                        onlyfor: null
+                    }
+                }
+            },
+            'item-5': {
+                onlyfor: 'h1',
+                text: 'item-5',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-6': {
+                onlyfor: 'h1',
+                text: 'item-6',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-7': {
+                onlyfor: 'h1',
+                text: 'item-7',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-8': {
+                onlyfor: 'h1',
+                text: 'item-8',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-9': {
+                onlyfor: 'h1',
+                text: 'item-9',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            },
+            'item-10': {
+                onlyfor: 'h1',
+                text: 'item-10',
+                disabled: false,
+                handler: function () {
+                    alert('item-1 clicked!')
+                }
+            }
+        }
+    )
+</script>
+</body>
+
+</html>
