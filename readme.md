@@ -17,8 +17,8 @@
 when up/down arrow clicked menu must scroll by 1 item up/down
     -	If the menu does not fit into the screen custom scroll should appear
 
-<div style="text-align:center">
-<img src="example_imgs/img.png" style="display:inline-block;">
+<div style="">
+<img src="example_imgs/img.png" style="display:block; margin: 0 auto;">
 </div>
 
 
